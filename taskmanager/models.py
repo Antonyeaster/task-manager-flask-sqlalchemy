@@ -8,7 +8,8 @@ class Category(db.Model):
     # allows a string of 25 characters - unique=True making sure its a new entry
     # nullable=False making sure its not left empty or blank,
     # meaning it's required
-    tasks = db.relationship("Task", backref="category", cascade="all, delete", lazy="True")
+    tasks = db.relationship(
+        "Task", backref="category", cascade="all, delete", lazy=True)
     # will not be visable on the database like using column, 
     # just to reference the one or many relationships
     # backref means it reverses and becomes many-to-one
